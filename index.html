@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sistem Bel Otomatis Ultimate</title>
+
+<link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+
+<header>
+<h1>🔔 Sistem Bel Otomatis Ultimate</h1>
+</header>
+
+<main>
+
+<!-- KIRI -->
+<div class="left-column">
+
+<div class="clock-container">
+<div class="time-display" id="clock">00:00:00</div>
+<div class="date-display" id="date">Senin, 1 Januari 2024</div>
+<div class="status-badge" id="status-badge">Menunggu Jadwal</div>
+</div>
+
+<div class="card">
+
+<div class="card-header">
+<h2 class="card-title">Tambah Jadwal</h2>
+</div>
+
+<form id="schedule-form">
+
+<div class="form-group">
+<label>Waktu</label>
+<input type="time" id="schedule-time" required>
+</div>
+
+<div class="form-group">
+<label>Keterangan</label>
+<input type="text" id="schedule-desc" required>
+</div>
+
+<div class="form-group">
+
+<label>Pilih Hari Berlaku</label>
+
+<div class="day-selector">
+
+<div class="day-checkbox">
+<input type="checkbox" id="d-0" value="Minggu">
+<label for="d-0">Min</label>
+</div>
+
+<div class="day-checkbox">
+<input type="checkbox" id="d-1" value="Senin" checked>
+<label for="d-1">Sen</label>
+</div>
+
+<div class="day-checkbox">
+<input type="checkbox" id="d-2" value="Selasa" checked>
+<label for="d-2">Sel</label>
+</div>
+
+<div class="day-checkbox">
+<input type="checkbox" id="d-3" value="Rabu" checked>
+<label for="d-3">Rab</label>
+</div>
+
+<div class="day-checkbox">
+<input type="checkbox" id="d-4" value="Kamis" checked>
+<label for="d-4">Kam</label>
+</div>
+
+<div class="day-checkbox">
+<input type="checkbox" id="d-5" value="Jumat" checked>
+<label for="d-5">Jum</label>
+</div>
+
+<div class="day-checkbox">
+<input type="checkbox" id="d-6" value="Sabtu">
+<label for="d-6">Sab</label>
+</div>
+
+</div>
+</div>
+
+<button type="submit" class="btn btn-primary">
+Tambah ke Jadwal
+</button>
+
+</form>
+
+<div class="audio-settings">
+
+<h2 class="card-title audio-title">
+Pengaturan Suara
+</h2>
+
+<div class="form-group">
+<label>Jenis Bunyi Bel</label>
+
+<select id="sound-type">
+
+<option value="dingdong">🔔 Bel Sekolah</option>
+<option value="alarm">🚨 Alarm</option>
+<option value="melody">🎶 Melodi</option>
+<option value="whistle">🏃 Peluit</option>
+<option value="beep">⏰ Beep</option>
+<option value="file">📂 File Sendiri</option>
+
+</select>
+
+</div>
+
+<div id="file-upload-group" class="form-group hidden">
+
+<label>Pilih File Audio</label>
+
+<input type="file" id="audio-upload" accept="audio/*">
+
+</div>
+
+<button type="button" id="test-audio-btn" class="btn btn-secondary">
+🔊 Tes Suara
+</button>
+
+</div>
+
+<audio id="bell-audio"></audio>
+
+</div>
+
+</div>
+
+
+<!-- KANAN -->
+
+<div class="card">
+
+<div class="card-header table-header">
+
+<h2 class="card-title">
+Daftar Jadwal
+</h2>
+
+<span class="today-label">
+Hari Ini: <span id="current-day-label">Senin</span>
+</span>
+
+</div>
+
+<div class="table-container">
+
+<table id="schedule-table">
+
+<thead>
+
+<tr>
+<th>Waktu</th>
+<th>Keterangan</th>
+<th>Berlaku</th>
+<th>Aksi</th>
+</tr>
+
+</thead>
+
+<tbody id="schedule-body"></tbody>
+
+</table>
+
+<div id="empty-state" class="empty-state">
+Belum ada jadwal
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<footer>
+<p>Sistem Bel Web © 2024</p>
+</footer>
+
+<div id="toast" class="toast">
+<span class="toast-icon">✅</span>
+<span id="toast-message"></span>
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
