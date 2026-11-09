@@ -1,0 +1,1 @@
+Aplikasi web ini dirancang sebagai simulasi sistem bel otomatis berbasis web yang biasa digunakan di instansi seperti sekolah, kampus, atau kantor. Sistem ini berfungsi untuk menampilkan waktu secara real-time sekaligus mengelola daftar jadwal alarm/bunyi bel otomatis berdasarkan hari dan jam tertentu.
